@@ -1,0 +1,25 @@
+<ngx-one-column-layout>
+  <nb-menu [items]="menu"></nb-menu>
+  <router-outlet>
+    <div class="card-row">
+      <div class="card-col">
+        <nb-card size="tiny">
+          <nb-card-header>Noticias <button nbButton size="tiny" class="float-right" (click)="nuevaNoticia()">Nuevo</button>
+    </nb-card-header>
+          <nb-accordion>
+           <nb-accordion-item>
+            <nb-accordion-item-header>Product Details</nb-accordion-item-header>
+            <nb-accordion-item-body>
+              Item Content
+            </nb-accordion-item-body>
+           </nb-accordion-item>
+          </nb-accordion>
+
+        </nb-card>
+
+      </div>
+
+    </div>
+
+  </router-outlet>
+</ngx-one-column-layout>

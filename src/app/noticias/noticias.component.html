@@ -1,0 +1,8 @@
+<nb-card>
+  <nb-card-body class="example-items-rows">
+    <input type="text" nbInput fullWidth status="basic" id="inputTitulo" #inputTitulo class="form-control" placeholder="Titulo de la Noticia" required autofocus>
+    <textarea type="text" nbInput fullWidth status="basic" id="inputDetalle" #inputDetalle class="form-control" placeholder="Detalle Noticia" required ></textarea>
+    <button type="button" mat-button ngxFilePicker  multiple accept="image/*" (filePick)="onFilePicked($event)">Browse</button>
+    <button nbButton fullWidth status="primary" (click)="guardaNoticia(inputTitulo.value,inputDetalle.value)"  >Ingresar</button>
+  </nb-card-body>
+</nb-card>

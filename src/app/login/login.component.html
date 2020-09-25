@@ -1,0 +1,33 @@
+<login-layout>
+  <router-outlet>
+
+
+    <div class="col-lg-6">
+      <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">Ligueros</h1>
+        <p>Portal de administración</p>
+      </div>
+
+      <div class="form-label-group">
+        <input type="email" id="inputEmail" #inputEmail class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputEmail">Dirección de Email</label>
+      </div>
+
+      <div class="form-label-group">
+        <input type="password" id="inputPassword" #inputPassword class="form-control" placeholder="Password" required>
+        <label for="inputPassword">Password</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button nbButton fullWidth status="primary" (click)="login(inputEmail.value,inputPassword.value)"  >Ingresar</button>
+    </div>
+
+
+
+
+  </router-outlet>
+</login-layout>
