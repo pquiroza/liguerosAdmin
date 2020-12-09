@@ -27,8 +27,15 @@ export class LoginComponent implements OnInit {
     this.firebaseAuth.auth.signInWithEmailAndPassword(email,password).then((result) =>{
       firebase.auth().onAuthStateChanged(usuario => {
           this.http.get(environment.server+'/usuario?IdGoogle='+usuario.uid).subscribe((tipo:any) => {
-            console.log(tipo);
-            this.router.navigate(['colhome']);
+            console.log(tipo[0])
+            console.log(tipo[0].TIPO);
+            if (tipo[0].TIPO==="Administrador"){
+              this.router.navigate(['colhome']);
+            }
+            else{
+              this.router.navigate(['admhome'])
+            }
+
           })
       })
 

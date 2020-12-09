@@ -1,0 +1,8 @@
+<ngx-one-column-layout>
+  <nb-menu [items]="menu"></nb-menu>
+  <router-outlet>
+
+    <ng2-smart-table [settings]="settings" [source]="datos" (createConfirm)="onCreateConfirm($event)" (edit)="onEdit($event)"></ng2-smart-table>
+
+  </router-outlet>
+</ngx-one-column-layout>

@@ -35,9 +35,10 @@ import { ColhomeComponent } from './colhome/colhome.component';
 import { DetallecampeonatoComponent } from './detallecampeonato/detallecampeonato.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { ColequiposComponent } from './colequipos/colequipos.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, ColhomeComponent, DetallecampeonatoComponent, NoticiasComponent],
+  declarations: [AppComponent, LoginComponent, ColhomeComponent, DetallecampeonatoComponent, NoticiasComponent, ColequiposComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

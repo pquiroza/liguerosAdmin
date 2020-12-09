@@ -7,10 +7,12 @@
           <nb-card-header>Noticias <button nbButton size="tiny" class="float-right" (click)="nuevaNoticia()">Nuevo</button>
     </nb-card-header>
           <nb-accordion>
-           <nb-accordion-item>
-            <nb-accordion-item-header>Product Details</nb-accordion-item-header>
+           <nb-accordion-item *ngFor="let n of noticias">
+            <nb-accordion-item-header>{{n.TITULO+"  "}}{{ n.FECHA}}</nb-accordion-item-header>
             <nb-accordion-item-body>
-              Item Content
+              {{n.DESCRIPCION}}
+              <img src={{n.URLFoto}} class="img-thumbnail" alt="Responsive image">
+
             </nb-accordion-item-body>
            </nb-accordion-item>
           </nb-accordion>

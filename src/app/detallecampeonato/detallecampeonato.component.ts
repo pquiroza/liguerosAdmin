@@ -24,28 +24,38 @@ import { Router } from '@angular/router';
 export class DetallecampeonatoComponent implements OnInit {
   menu = MENU_ITEMS;
   idc: any;
+  noticias: any;
   constructor(private windowService: NbWindowService, private storage: AngularFireStorage,  private http: HttpClient) {
-      this.idc = localStorage.getItem("sel");
-      this.getNoticias(this.idc).then(a => {
-
-      })
+this.ngOnInit();
   }
 
   ngOnInit(): void {
+    this.idc = localStorage.getItem("sel");
+    console.log(this.idc)
+    this.getNoticias(this.idc).then(a => {
+      console.log(a)
+      this.noticias = a;
+    })
   }
 
 
 nuevaNoticia(){
-  this.windowService.open(NoticiasComponent, { title: `Nueva Noticia` });
+  let windowRef = this.windowService.open(NoticiasComponent, { title: `Nueva Noticia` });
+
+  this.getNoticias(this.idc).then(a => {
+    this.noticias = a;
+  })
 
 }
+onClose(){
 
+}
 
 getNoticias(idc){
   return new Promise((resolve, reject) => {
     firebase.auth().onAuthStateChanged(usuario => {
       if (usuario){
-        this.http.get(environment.server+'/noticias?idcampeonato='+idc).subscribe((noticias: any) => {
+        this.http.get(environment.server+'/noticias?IdCampeonato='+idc).subscribe((noticias: any) => {
           console.log(noticias)
           resolve(noticias)
         })

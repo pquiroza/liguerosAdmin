@@ -44,7 +44,8 @@ sel: any;
     private layoutService: LayoutService,
     private breakpointService: NbMediaBreakpointsService,
     private rippleService: RippleService,
-     private http: HttpClient
+     private http: HttpClient,
+     private router: Router
   ) {
 
 
@@ -112,7 +113,10 @@ sel: any;
   }
 
   changeTheme(themeName: string) {
-    this.themeService.changeTheme(themeName);
+    console.log(themeName)
+    localStorage.setItem("sel",themeName);
+    this.router.navigate(['/detallecampeonato'])
+  //  this.themeService.changeTheme(themeName);
   }
 
   toggleSidebar(): boolean {
